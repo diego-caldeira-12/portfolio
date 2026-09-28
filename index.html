@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Caldeira · Sites e sistemas</title>
+<meta name="description" content="Portfólio de Diego Caldeira, desenvolvedor em Itabira/MG. Sites, lojas virtuais, plataformas e agentes de IA no ar para empresas reais.">
+<meta property="og:title" content="Diego Caldeira · Sites e sistemas">
+<meta property="og:description" content="Sites, lojas virtuais, plataformas e automações com IA. Veja os projetos no ar.">
+<meta property="og:image" content="assets/shots/ispm.jpg">
+<meta name="theme-color" content="#1B1E23">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231B1E23'/><rect x='12' y='4' width='8' height='6' fill='%23E8772E'/><rect x='12' y='10' width='8' height='4' fill='%23E0197D'/><rect x='12' y='14' width='8' height='7' fill='%230E7490'/><rect x='12' y='21' width='8' height='7' fill='%23B3261E'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --quartzo:#ECEEF1;   /* fundo */
+  --papel:#FFFFFF;     /* superfícies */
+  --hematita:#1B1E23;  /* texto e blocos escuros */
+  --aco:#5E6875;       /* texto secundário */
+  --lamina:#D3D8DE;    /* linhas */
+  --jaspe:#B3261E;     /* acento, uso contido */
+  --display:"Big Shoulders Display", "Arial Narrow", sans-serif;
+  --body:"Hanken Grotesk", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+  --wrap:1200px;
+  --gutter:clamp(16px, 4vw, 40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--quartzo);color:var(--hematita);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--jaspe);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--aco)}
+.eyebrow b{color:var(--jaspe);font-weight:500}
+
+/* ---------- topo ---------- */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--quartzo) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--lamina)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+.nav{display:flex;gap:26px;align-items:center}
+.nav a{text-decoration:none;font-size:15px;color:var(--aco);font-weight:500}
+.nav a:hover{color:var(--hematita)}
+.nav a.btn{color:var(--quartzo)}
+.nav a.btn:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--hematita);color:var(--quartzo);text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:4px;transition:background .2s}
+.btn:hover{background:var(--jaspe)}
+.btn.ghost{background:transparent;color:var(--hematita);box-shadow:inset 0 0 0 1.5px var(--hematita)}
+.btn.ghost:hover{background:var(--hematita);color:var(--quartzo)}
+.btn svg{width:18px;height:18px;flex:none}
+@media (max-width:760px){.nav a:not(.btn){display:none}.top .btn{padding:9px 14px;font-size:14px}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(56px,8vw,88px)}
+.hero .wrap{display:grid;grid-template-columns:1fr 250px;gap:clamp(32px,6vw,80px);align-items:start}
+.hero h1{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(52px,9.4vw,124px);line-height:.88;letter-spacing:-.005em;margin:18px 0 28px}
+.hero h1 em{font-style:normal;color:var(--jaspe);white-space:nowrap}
+.hero p.lead{font-size:clamp(18px,2vw,21px);max-width:560px;color:#343a42}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:40px;padding-top:20px;border-top:1px solid var(--lamina)}
+.facts span{font-family:var(--mono);font-size:13px;color:var(--aco)}
+.facts b{font-family:var(--display);font-size:26px;font-weight:800;color:var(--hematita);margin-right:6px;vertical-align:-2px}
+
+/* testemunho de sondagem: cada faixa = um projeto */
+.core .cap{display:flex;justify-content:space-between;margin-bottom:10px}
+.core ol{list-style:none;display:flex;flex-direction:column}
+.core a{display:grid;grid-template-columns:minmax(0,1fr) 88px;align-items:stretch;gap:10px;height:var(--h);text-decoration:none}
+.core .lb{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--aco);white-space:nowrap;transition:color .2s}
+.core .lb::after{content:"";width:14px;height:1px;background:var(--lamina);transition:width .2s,background .2s}
+.core .bd{background:var(--c);position:relative;overflow:hidden;box-shadow:inset -14px 0 20px rgba(0,0,0,.2),inset 10px 0 14px rgba(255,255,255,.16);transform-origin:left;animation:band .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 70ms)}
+.core .bd::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(172deg,transparent 0 5px,rgba(0,0,0,.07) 5px 6px)}
+.core li:first-child .bd{border-radius:44px 44px 0 0}
+.core li:last-child .bd{border-radius:0 0 44px 44px}
+.core a:hover .lb,.core a:focus-visible .lb{color:var(--hematita)}
+.core a:hover .lb::after,.core a:focus-visible .lb::after{background:var(--hematita);width:24px}
+.core a:hover .bd,.core a:focus-visible .bd{filter:brightness(1.12)}
+.core a:focus-visible{outline-offset:1px}
+@keyframes band{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .core{margin-top:8px}
+  .core ol{flex-direction:row;height:40px}
+  .core li{flex:var(--w) 1 0}
+  .core a{display:block;height:100%}
+  .core .lb{display:none}
+  .core .bd{display:block;height:100%;animation-name:none}
+  .core li:first-child .bd{border-radius:20px 0 0 20px}
+  .core li:last-child .bd{border-radius:0 20px 20px 0}
+}
+
+/* ---------- seções ---------- */
+section{padding:clamp(64px,9vw,112px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;align-items:end;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,72px);line-height:.92;margin-top:12px}
+.sec-head p{color:#3d444d;max-width:520px}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+/* projeto em destaque */
+.proj{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--lamina);scroll-margin-top:80px}
+.proj:nth-of-type(even) .shot{order:2}
+.shot{display:block;text-decoration:none;background:var(--papel);border-radius:10px;overflow:hidden;box-shadow:0 1px 0 var(--lamina),0 24px 50px -30px rgba(27,30,35,.55);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+a.shot:hover{transform:translateY(-4px);box-shadow:0 1px 0 var(--lamina),0 34px 60px -30px rgba(27,30,35,.6)}
+.bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #E6E9ED;background:#F6F7F9}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--lamina);flex:none}
+.bar i:first-child{background:var(--c)}
+.bar .url{font-family:var(--mono);font-size:12px;color:var(--aco);background:var(--papel);border:1px solid #E6E9ED;border-radius:4px;padding:3px 10px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot img{aspect-ratio:16/10;width:100%;height:auto;object-fit:cover;object-position:top}
+.info .tag{display:inline-flex;align-items:center;gap:8px}
+.info .tag::before{content:"";width:18px;height:6px;border-radius:3px;background:var(--c)}
+.info h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(32px,4vw,46px);line-height:.95;margin:10px 0 14px}
+.info p{color:#3d444d}
+.info ul.did{list-style:none;margin:16px 0 0;display:grid;gap:6px}
+.info ul.did li{padding-left:20px;position:relative;font-size:16px}
+.info ul.did li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:2px;background:var(--c)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 22px}
+.stack span{font-family:var(--mono);font-size:12px;padding:3px 9px;border:1px solid var(--lamina);border-radius:3px;color:var(--aco);background:var(--papel)}
+.go{font-weight:600;text-decoration:none;display:inline-flex;gap:8px;align-items:center;border-bottom:2px solid var(--c);padding-bottom:2px}
+.go:hover{color:var(--jaspe)}
+.note{font-family:var(--mono);font-size:12.5px;color:var(--aco)}
+@media (max-width:860px){.proj{grid-template-columns:1fr}.proj:nth-of-type(even) .shot{order:0}}
+
+/* equipe: faixa escura */
+.team{background:var(--hematita);color:#E4E7EB}
+.team .eyebrow{color:#9AA4B1}
+.team .sec-head p{color:#B9C1CB}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;scroll-margin-top:80px}
+.card .shot{box-shadow:0 20px 40px -24px #000}
+.card .bar{background:#2A2E35;border-color:#33383F}
+.card .bar .url{background:#1F2328;border-color:#33383F;color:#9AA4B1}
+.card .bar i{background:#454B54}
+.card .bar i:first-child{background:var(--c)}
+.card h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:1;margin:20px 0 8px;display:flex;align-items:center;gap:10px}
+.card h3::before{content:"";width:18px;height:6px;border-radius:3px;background:var(--c);flex:none}
+.card p{font-size:15.5px;color:#B9C1CB}
+.card .kind{margin-top:10px;color:#8A94A3}
+.card:hover h3{color:#fff}
+.team-note{margin-top:44px;padding-top:20px;border-top:1px solid #33383F;color:#9AA4B1;font-size:15px;max-width:760px}
+
+/* modelos */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 22px}
+@media (max-width:860px){.models{grid-template-columns:repeat(2,1fr);gap:22px 14px}}
+.model{text-decoration:none;display:block}
+.model .frame{border-radius:8px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--lamina),0 16px 30px -22px rgba(27,30,35,.5);transition:transform .3s}
+.model img{aspect-ratio:4/3;object-fit:cover;object-position:top;width:100%;height:auto}
+.model:hover .frame{transform:translateY(-3px)}
+.model b{display:block;margin-top:12px;font-weight:600;font-size:16px}
+.model span{font-family:var(--mono);font-size:12px;color:var(--aco)}
+.models-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:36px}
+
+/* serviços e processo */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:2px solid var(--hematita)}
+.svc{padding:28px 24px 30px 0;border-bottom:1px solid var(--lamina)}
+.svc h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:26px;line-height:1;margin-bottom:10px}
+.svc p{font-size:15.5px;color:#3d444d;max-width:34ch}
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:64px}
+.steps li{counter-increment:s;padding-top:16px;border-top:1px solid var(--lamina)}
+.steps li::before{content:"Etapa " counter(s);display:block;font-family:var(--mono);font-size:12px;color:var(--jaspe);margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase}
+.steps b{display:block;font-size:17px;margin-bottom:4px}
+.steps span{font-size:15.5px;color:#3d444d}
+
+/* outros */
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px;border-top:1px solid var(--lamina)}
+.others a{display:block;padding:20px 0;border-bottom:1px solid var(--lamina);text-decoration:none}
+.others a:hover b{color:var(--jaspe)}
+.others b{font-weight:600;display:block}
+.others span{font-size:15px;color:var(--aco)}
+
+/* contato */
+.contact{background:var(--jaspe);color:#fff;padding:clamp(64px,9vw,104px) 0}
+.contact h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(48px,8vw,104px);line-height:.88;max-width:12ch}
+.contact p{max-width:520px;margin:22px 0 32px;font-size:19px;color:#FBE9E7}
+.contact .btn{background:#fff;color:var(--hematita)}
+.contact .btn:hover{background:var(--hematita);color:#fff}
+.contact .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #fff}
+.contact .btn.ghost:hover{background:#fff;color:var(--jaspe)}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px}
+.contact .links{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:40px;font-family:var(--mono);font-size:13px}
+.contact .links a{color:#FBE9E7}
+footer{padding:26px 0;font-family:var(--mono);font-size:12px;color:var(--aco)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* revelar ao rolar */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .core .bd{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .shot,.model .frame{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Diego Caldeira</a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#projetos">Projetos</a>
+      <a href="#modelos">Modelos</a>
+      <a href="#servicos">Serviços</a>
+      <a class="btn" href="https://wa.me/5531991370648?text=Oi%20Diego%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Pedir orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Desenvolvedor full-stack · <b>Itabira/MG</b></p>
+        <h1>Sites e sistemas que já estão <em>no ar</em>.</h1>
+        <p class="lead">Faço sites, lojas virtuais, plataformas e automações com IA para empresas de verdade. Tudo o que está nesta página funciona agora: é só clicar e navegar.</p>
+        <div class="ctas">
+          <a class="btn" href="https://wa.me/5531991370648?text=Oi%20Diego%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Conversar no WhatsApp</a>
+          <a class="btn ghost" href="#projetos">Ver projetos</a>
+        </div>
+        <div class="facts">
+          <span><b>11</b>projetos no ar</span>
+          <span><b>9</b>modelos prontos para negócios locais</span>
+          <span><b>IA</b>agentes e automações sob medida</span>
+        </div>
+      </div>
+
+      <div class="core" aria-label="Índice de projetos">
+        <div class="cap"><span class="eyebrow">Amostra</span><span class="eyebrow">↓</span></div>
+        <ol id="core"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Projetos autorais</p>
+          <h2>Do zero<br>ao domínio próprio</h2>
+        </div>
+        <p>Projetos que eu idealizei, desenvolvi e coloquei no ar: do layout ao banco de dados, da hospedagem ao formulário que chega no WhatsApp do cliente.</p>
+      </div>
+      <div id="featured"></div>
+    </div>
+  </section>
+
+  <section class="team" id="equipe">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Em equipe · Inovamind</p>
+          <h2>Clientes atendidos<br>pelo nosso time</h2>
+        </div>
+        <p>De out/2025 a ago/2026 fiz parte do time de desenvolvimento da Inovamind. Estes projetos foram construídos em equipe, com participação minha no desenvolvimento, dados e automações.</p>
+      </div>
+      <div class="grid" id="teamGrid"></div>
+      <p class="team-note">Também atuei nos painéis internos de clientes da Inovamind (conciliação contábil, telemetria e gestão) e em agentes de IA de atendimento e vendas pelo WhatsApp. Esses sistemas ficam atrás de login e não são exibidos aqui.</p>
+    </div>
+  </section>
+
+  <section id="modelos">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Para o seu negócio</p>
+          <h2>Modelos prontos<br>para personalizar</h2>
+        </div>
+        <p>Exemplos fictícios de sites para clínicas, consultórios, salões e barbearias. Escolha o estilo que combina com você; eu troco nome, fotos, serviços e cores e deixo no ar com o seu domínio.</p>
+      </div>
+      <div class="models" id="models"></div>
+      <div class="models-cta">
+        <a class="btn ghost" href="https://diego-caldeira-12.github.io/sites-itabira/clinicas/" target="_blank" rel="noopener">Abrir modelos de clínicas</a>
+        <a class="btn ghost" href="https://diego-caldeira-12.github.io/sites-itabira/" target="_blank" rel="noopener">Abrir modelos de salões</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Serviços</p>
+          <h2>O que eu posso<br>fazer por você</h2>
+        </div>
+        <p>Do site de apresentação ao sistema que organiza a operação inteira. Você fala comigo direto, sem intermediário.</p>
+      </div>
+      <div class="services rv">
+        <div class="svc"><h3>Site profissional</h3><p>Para ser encontrado no Google e levar o cliente direto para o seu WhatsApp. Rápido no celular, com domínio próprio.</p></div>
+        <div class="svc"><h3>Loja virtual</h3><p>Catálogo, carrinho, pagamento e painel para você cadastrar produtos, cupons e acompanhar pedidos.</p></div>
+        <div class="svc"><h3>Sistemas e painéis</h3><p>Plataformas sob medida: cadastros, relatórios, simuladores, portais de parceiros e áreas com login.</p></div>
+        <div class="svc"><h3>IA e automação</h3><p>Agentes que atendem e vendem pelo WhatsApp 24 horas e rotinas que eliminam trabalho manual repetitivo.</p></div>
+      </div>
+      <ol class="steps rv">
+        <li><b>Conversa rápida</b><span>Você me conta o que precisa, pelo WhatsApp ou numa call.</span></li>
+        <li><b>Prévia sem compromisso</b><span>Monto uma primeira versão com a cara do seu negócio para você ver antes de decidir.</span></li>
+        <li><b>Ajustes</b><span>Refinamos textos, fotos e funcionalidades até ficar do jeito certo.</span></li>
+        <li><b>No ar</b><span>Registro o domínio, publico e acompanho. Você não precisa entender de tecnologia.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="outros" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv" style="margin-bottom:28px">
+        <div>
+          <p class="eyebrow">Laboratório</p>
+          <h2>Projetos pessoais<br>e código aberto</h2>
+        </div>
+        <p>Onde eu testo tecnologia nova. Código público no GitHub.</p>
+      </div>
+      <div class="others rv">
+        <a href="https://rancamate-team.vercel.app" target="_blank" rel="noopener"><b>Rancamate Team ↗</b><span>Jogo web: monte seu time e dispute o campeonato com amigos.</span></a>
+        <a href="https://github.com/diego-caldeira-12/payments-gateway-api" target="_blank" rel="noopener"><b>payments-gateway-api ↗</b><span>Gateway de pagamento simulado com idempotência, webhooks e fila assíncrona.</span></a>
+        <a href="https://github.com/diego-caldeira-12/plantdoc-ai" target="_blank" rel="noopener"><b>PlantDoc AI ↗</b><span>Visão computacional que identifica doenças em plantas por foto.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <h2>Vamos colocar o seu no ar?</h2>
+      <p>Me mande uma mensagem contando sobre o seu negócio. A primeira prévia não tem custo.</p>
+      <div class="row">
+        <a class="btn" href="https://wa.me/5531991370648?text=Oi%20Diego%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Conversar no WhatsApp</a>
+        <a class="btn ghost" href="mailto:diegoativa2003@gmail.com?subject=Projeto%20de%20site">Enviar e-mail</a>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/diegocaldeira-dev/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/diego-caldeira-12" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.instagram.com/diegocaldeira_/" target="_blank" rel="noopener">Instagram</a>
+        <span>(31) 99137-0648</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Diego Caldeira · Itabira/MG</span><span>Capturas de tela dos sites em set/2026</span></div>
+</footer>
+
+<script>
+// Cada projeto aparece no índice (amostra) e na sua seção.
+const featured = [
+  { id:"ispm", name:"ISPM Consultoria", c:"#E8772E", url:"https://ispmtecnologia.com.br", kind:"Site institucional + captação de leads",
+    desc:"Site da consultoria de tecnologia da qual sou sócio. O destaque é o Mapeamento ISPM: um questionário em etapas que entende o problema do visitante e entrega o contato já qualificado para a equipe comercial.",
+    did:["Questionário multietapas com salvamento no banco","Envio automático dos leads por e-mail","Páginas de soluções e projetos otimizadas para Google"],
+    stack:["HTML/CSS/JS","Supabase","Edge Functions"] },
+  { id:"dramear", name:"Hora de Dramear", c:"#E0197D", url:"https://horadedramear.com.br", kind:"Portal de conteúdo",
+    desc:"Portal para fãs de doramas e cultura asiática, com notícias diárias, newsletter, votações do público e uma premiação anual própria.",
+    did:["Blog com categorias, filtros e busca","Votações e páginas da premiação Hora de Dramear Awards","Newsletter e integração com redes sociais"],
+    stack:["Web","SEO","Newsletter"] },
+  { id:"comparador", name:"Comparador de Preços", c:"#9C3D1E", url:"https://comparador-precos-mvp.vercel.app", kind:"Plataforma para empresas",
+    desc:"A empresa envia as notas fiscais de compra e a plataforma mostra, sem planilha, qual fornecedor cobra mais caro pelo mesmo item e quando um preço subiu fora do normal. Piloto em Itabira.",
+    did:["Leitura automática do XML da NF-e","Classificação dos itens por categoria","Alertas de aumento atípico por fornecedor"],
+    stack:["Next.js","React","Supabase","Playwright"] },
+  { id:"viagens", name:"Plataforma de Viagens", c:"#0E7490", url:"https://plataforma-viagens.alexandreediego220.workers.dev/hoteis.html", host:"plataforma-viagens · workers.dev", kind:"Plataforma 3 em 1",
+    desc:"Três produtos numa só plataforma: um app que divide as despesas de uma viagem em grupo de forma justa, uma busca de hospedagens com preços ao vivo e um portal para parceiros.",
+    did:["Busca com mais de 350 hospedagens, filtros, mapa e favoritos","Rateio de despesas e pagamentos entre participantes","Portal do parceiro para hotéis e pousadas"],
+    stack:["Cloudflare Workers","Supabase","LiteAPI"] },
+  { id:"contempla", name:"Visão Consórcio", c:"#16A34A", url:null, host:"visão consórcio · em preparação", kind:"Marketplace de consórcios",
+    desc:"Marketplace de cartas de consórcio com vendedores verificados. Quem compra vê a chance real de contemplação antes de pagar e acompanha a evolução da carta depois.",
+    did:["Simulador de probabilidade de contemplação","Selo de verificação para vendedores com CNPJ","Área do vendedor com convites e histórico"],
+    stack:["React","Supabase","Cloudflare Workers"],
+    note:"Em preparação para lançamento. Demonstração disponível sob pedido." },
+];
+const team = [
+  { id:"bikemania", name:"Bike Mania Itabira", c:"#4E7D1E", url:"https://bikemaniaitabira.com.br", kind:"Loja virtual completa",
+    desc:"E-commerce da loja de bicicletas: catálogo por categoria, carrinho, checkout, acompanhamento de pedido e painel administrativo." },
+  { id:"imoveislucas", name:"Imóveis Lucas", c:"#B4593D", url:"https://www.imoveislucas.com.br", kind:"Site imobiliário",
+    desc:"Vitrine de casas em condomínio em MG e apartamentos em SP, com navegação por mapa e agendamento de visita." },
+  { id:"itabiraeregiao", name:"#ItabiraERegiao", c:"#3B82F6", url:"https://itabiraeregiao.com.br", kind:"Portal de notícias",
+    desc:"Agregador que reúne automaticamente as notícias dos portais de Itabira e região num só lugar, atualizado a cada minuto." },
+  { id:"nexfert", name:"NexFert", c:"#22A559", url:"https://nexfert.com.br", kind:"Logtech do agro",
+    desc:"Plataforma de frete para o agronegócio: site, cotação online, apps Android e iOS e painel de gestão com entrega confirmada por QR." },
+  { id:"inovaconcilia", name:"InovaConcilia", c:"#06B6D4", url:"https://concilia.inovamind.dev", kind:"SaaS com IA",
+    desc:"Conciliação contábil automatizada com inteligência artificial para escritórios de contabilidade." },
+  { id:"inovamind", name:"Inovamind", c:"#2563EB", url:"https://www.inovamind.dev", kind:"Site institucional",
+    desc:"Site da empresa de automação e IA, apresentando o ecossistema de soluções." },
+];
+const models = [
+  ["odonto","OdontoVita","Clínica odontológica","clinicas/odonto/"],
+  ["estetica","Clínica de estética","Estética e dermatologia","clinicas/estetica/"],
+  ["psico","Consultório de psicologia","Psicologia e terapias","clinicas/psico/"],
+  ["barbearia","Barbearia Castro","Barbearia","barbearia-castro/"],
+  ["camelia","Espaço Camélia","Salão de beleza","espaco-camelia/"],
+  ["lumiere","Lumière Hair Studio","Salão de beleza","lumiere-studio/"],
+  ["mariamaria","Maria Maria","Espaço de beleza","maria-maria/"],
+  ["aurora","Studio Aurora","Estética e beleza","studio-aurora/"],
+  ["tamires","Tamires Silva","Beleza a domicílio","tamires-silva/"],
+];
+const host = u => u.replace(/^https?:\/\//,"").replace(/\/.*$/,"");
+const esc = s => s.replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+
+function shot(p, dark){
+  const inner = `<div class="bar"><i></i><i></i><i></i><span class="url">${esc(p.host || host(p.url))}</span></div>
+    <img src="assets/shots/${p.id}.jpg" alt="Página inicial do site ${esc(p.name)}" loading="lazy" width="1440" height="900">`;
+  return p.url
+    ? `<a class="shot" href="${p.url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">${inner}</a>`
+    : `<div class="shot">${inner}</div>`;
+}
+
+document.getElementById("featured").innerHTML = featured.map(p => `
+  <article class="proj rv" id="p-${p.id}" style="--c:${p.c}">
+    ${shot(p)}
+    <div class="info">
+      <p class="eyebrow tag">${esc(p.kind)}</p>
+      <h3>${esc(p.name)}</h3>
+      <p>${esc(p.desc)}</p>
+      <ul class="did">${p.did.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>
+      <div class="stack">${p.stack.map(s=>`<span>${esc(s)}</span>`).join("")}</div>
+      ${p.url ? `<a class="go" href="${p.url}" target="_blank" rel="noopener">Abrir ${esc(host(p.url))} ↗</a>` : `<p class="note">${esc(p.note)}</p>`}
+    </div>
+  </article>`).join("");
+
+document.getElementById("teamGrid").innerHTML = team.map(p => `
+  <a class="card rv" id="p-${p.id}" href="${p.url}" target="_blank" rel="noopener" style="--c:${p.c}">
+    <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="url">${esc(host(p.url))}</span></div>
+      <img src="assets/shots/${p.id}.jpg" alt="Página inicial do site ${esc(p.name)}" loading="lazy" width="1440" height="900"></div>
+    <h3>${esc(p.name)}</h3>
+    <p>${esc(p.desc)}</p>
+    <span class="mono kind">${esc(p.kind)} · ${esc(host(p.url))} ↗</span>
+  </a>`).join("");
+
+document.getElementById("models").innerHTML = models.map(([id,name,kind,path]) => `
+  <a class="model rv" href="https://diego-caldeira-12.github.io/sites-itabira/${path}" target="_blank" rel="noopener">
+    <div class="frame"><img src="assets/shots/${id}.jpg" alt="Modelo de site: ${esc(name)}" loading="lazy" width="1440" height="900"></div>
+    <b>${esc(name)}</b><span>${esc(kind)}</span>
+  </a>`).join("");
+
+// Amostra: altura de cada faixa varia para parecer camadas de rocha.
+const all = [...featured, ...team];
+const heights = [46,30,40,52,34,44,28,38,50,32,42];
+document.getElementById("core").innerHTML = all.map((p,i) =>
+  `<li style="--w:${heights[i]}"><a href="#p-${p.id}" aria-label="${esc(p.name)}" style="--c:${p.c};--h:${heights[i]}px;--i:${i}"><span class="lb">${esc(p.name)}</span><span class="bd"></span></a></li>`).join("");
+
+// Revelar ao rolar
+const io = "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches
+  ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin:"0px 0px -8% 0px" })
+  : null;
+document.querySelectorAll(".rv").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+</script>
+</body>
+</html>
